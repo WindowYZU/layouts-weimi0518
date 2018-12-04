@@ -7,10 +7,13 @@ package lendle.courses.wp.layouts;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.WindowConstants;
+import javax.swing.event.AncestorListener;
 
 /**
  *
@@ -34,7 +37,15 @@ public class FlowLayoutSample3 {
         JButton clickButton=new JButton("Click!");
         //1. addActionListener to the clickButton
         //2. when clicking the button, add a new button to the container
-        
+        frame.add(clickButton, "South");
+        clickButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JButton button=new JButton(""+System.currentTimeMillis());
+                container.add(button);
+                frame.revalidate();
+            }
+        });
         //////////////////////////////////////////////////////////////////////
         
         frame.setVisible(true);
