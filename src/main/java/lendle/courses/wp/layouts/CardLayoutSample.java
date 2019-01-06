@@ -28,8 +28,9 @@ public class CardLayoutSample {
         JFrame frame = new JFrame();
         frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         frame.setSize(500, 500);
-        frame.setLayout(new BorderLayout());
+        //frame.setLayout(new BorderLayout());
         JPanel panel = new JPanel();
+        //堆疊式
         CardLayout layout = new CardLayout();
         panel.setLayout(layout);
         JPanel panel2 = new JPanel();
@@ -49,7 +50,30 @@ public class CardLayoutSample {
         }
         //add ActionListener to each control button and invoke
         //first, previous, next, and last for each button
-        
+        first.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                layout.first(panel);
+            }
+        });
+        prev.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                layout.previous(panel);
+            }
+        });
+        next.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                layout.next(panel);
+            }
+        });
+        last.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                layout.last(panel);
+            }
+        });
         //////////////////////////////////////////////////////
 
         frame.setVisible(true);

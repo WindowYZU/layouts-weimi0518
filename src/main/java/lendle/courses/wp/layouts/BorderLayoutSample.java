@@ -26,6 +26,7 @@ public class BorderLayoutSample {
         JFrame frame=new JFrame();
         frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         frame.setSize(500, 500);
+        //東南西北中
         BorderLayout layout=new BorderLayout();
         frame.setLayout(layout);
         
@@ -41,8 +42,8 @@ public class BorderLayoutSample {
         frame.add(button4, "East");
         JButton button5 = new JButton("5");
         frame.add(button5);
-        layout.setHgap(50);
-        layout.setVgap(50);
+        layout.setHgap(50); //設置組件之間的水平間隙。
+        layout.setVgap(50); //設置組件之間的垂直間隙。
         //////////////////////////////////////////////////////////////////////
         
         frame.setVisible(true);

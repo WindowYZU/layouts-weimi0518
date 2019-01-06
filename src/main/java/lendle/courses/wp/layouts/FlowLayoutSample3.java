@@ -6,7 +6,7 @@
 package lendle.courses.wp.layouts;
 
 import java.awt.BorderLayout;
-import java.awt.FlowLayout;
+import java.awt.FlowLayout; //左到右 上到下
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
